@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "dev.beeman.expo.playground"
@@ -32,6 +30,7 @@
       "eas": {
         "projectId": "f8937451-e24e-41e9-9139-e8a38b83e94d"
       }
-    }
+    },
+    "plugins": ["expo-build-properties"]
   }
 }
