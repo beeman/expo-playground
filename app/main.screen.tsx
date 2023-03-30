@@ -1,11 +1,13 @@
-import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, Text, View } from 'react-native'
+import { Button } from 'react-native-paper'
 
-export function Main() {
+export function MainScreen() {
   return (
     <View style={styles.container}>
       <Text>This, is just a test!</Text>
-      <StatusBar style="auto" />
+      <Button icon="camera" mode="contained" onPress={() => console.log('Pressed')}>
+        Press me
+      </Button>
     </View>
   )
 }
