@@ -9,11 +9,6 @@ import { createContext, ReactNode, useCallback, useContext, useMemo, useState } 
 
 import { adaptNavigationTheme, MD3DarkTheme, MD3LightTheme, Provider as PaperProvider } from 'react-native-paper'
 
-export const PreferencesContext = createContext({
-  toggleTheme: () => {},
-  isThemeDark: false,
-})
-
 const { LightTheme, DarkTheme } = adaptNavigationTheme({
   reactNavigationLight: NavigationDefaultTheme,
   reactNavigationDark: NavigationDarkTheme,
@@ -24,26 +19,26 @@ const CombinedDarkTheme = merge(MD3DarkTheme, DarkTheme)
 
 export interface UiThemeProviderContext {
   toggleTheme: () => void
-  isThemeDark: boolean
+  isDark: boolean
 }
 
 const UiThemeContext = createContext<UiThemeProviderContext>({} as UiThemeProviderContext)
 
 export function UiThemeProvider({ children }: { children: ReactNode }) {
-  const [isThemeDark, setIsThemeDark] = useState(true)
+  const [isDark, setIsDark] = useState(true)
 
-  let theme = isThemeDark ? CombinedDarkTheme : CombinedDefaultTheme
+  let theme = isDark ? CombinedDarkTheme : CombinedDefaultTheme
 
   const toggleTheme = useCallback(() => {
-    return setIsThemeDark(!isThemeDark)
-  }, [isThemeDark])
+    return setIsDark(!isDark)
+  }, [isDark])
 
   const value: UiThemeProviderContext = useMemo(
     () => ({
       toggleTheme,
-      isThemeDark,
+      isDark,
     }),
-    [toggleTheme, isThemeDark],
+    [toggleTheme, isDark],
   )
 
   return (
