@@ -1,7 +1,7 @@
 import { NavigationProp } from '@react-navigation/native'
 import { Text, View } from 'react-native'
 import { Button, Switch } from 'react-native-paper'
-import { useAuth } from '../auth/auth-provider'
+import { useAuth } from '../auth/data-access/auth-provider'
 import { useUiTheme } from '../ui/ui-theme-provider'
 
 export function HomeScreen({ navigation, route }: { navigation: NavigationProp<any>; route: any }) {

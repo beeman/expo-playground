@@ -4,6 +4,8 @@ import {
   NavigationContainer,
 } from '@react-navigation/native'
 import merge from 'deepmerge'
+import { StatusBar } from 'expo-status-bar'
+import * as React from 'react'
 
 import { createContext, ReactNode, useCallback, useContext, useMemo, useState } from 'react'
 
@@ -44,7 +46,10 @@ export function UiThemeProvider({ children }: { children: ReactNode }) {
   return (
     <UiThemeContext.Provider value={value}>
       <PaperProvider theme={theme}>
-        <NavigationContainer theme={theme}>{children}</NavigationContainer>
+        <NavigationContainer theme={theme}>
+          <StatusBar style="light" />
+          {children}
+        </NavigationContainer>
       </PaperProvider>
     </UiThemeContext.Provider>
   )
