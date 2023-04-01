@@ -23,15 +23,15 @@ export function AuthMainScreen({ navigation }: Props) {
           </View>
         </View>
         <View style={{ gap: 16, padding: 32 }}>
-          <Button disabled icon="google" mode="outlined">
-            Continue with Google
-          </Button>
-          <Button disabled icon="apple" mode="outlined">
-            Continue with Apple
-          </Button>
+          {/*<Button disabled icon="google" mode="outlined">*/}
+          {/*  Continue with Google*/}
+          {/*</Button>*/}
+          {/*<Button disabled icon="apple" mode="outlined">*/}
+          {/*  Continue with Apple*/}
+          {/*</Button>*/}
 
-          <Divider />
-          <Button mode="contained" onPress={() => navigation.navigate('Register')}>
+          {/*<Divider />*/}
+          <Button mode="contained" onPress={() => navigation.navigate('SignUp')}>
             Create Account
           </Button>
 
@@ -39,7 +39,7 @@ export function AuthMainScreen({ navigation }: Props) {
 
           <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginTop: 32 }}>
             <Text>Have an account already? </Text>
-            <UiTextButton label="Log in" onPress={login} />
+            <UiTextButton label="Log in" onPress={() => navigation.navigate('SignIn')} />
           </View>
         </View>
       </SafeAreaView>
